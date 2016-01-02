@@ -28,11 +28,9 @@ class TestCommand extends ContainerAwareCommand
         require_once($rootPath.'vendor/mike42/escpos-php/Escpos.php');
 
         $imagePath = $rootPath.'resources/elephant-70x70.png';
-        $imagePath = $rootPath.'resources/tux.png';
         $img = new \EscposImage($imagePath);
 
-        $connector = new \FilePrintConnector('/Users/mlkiiwy/test.log');
-        //$connector = new \FilePrintConnector('/dev/usb/lp0');
+        $connector = new \FilePrintConnector('/home/pi/test.log');
         $printer = new \Escpos($connector);
         $printer->initialize();
 
@@ -40,8 +38,7 @@ class TestCommand extends ContainerAwareCommand
         $printer->feed(2);
 
         try {
-            $printer->graphics($img);
-            //$printer->bitImage($img, \Escpos::IMG_DEFAULT);
+            $printer->bitImage($img);
         } catch (\Exception $e) {
             /* Images not supported on your PHP, or image file not found */
             echo $e;
