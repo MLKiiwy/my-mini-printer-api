@@ -25,6 +25,7 @@ class TestCommand extends ContainerAwareCommand
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $rootPath = $this->getContainer()->get('kernel')->getRootDir().'/../';
+        require_once($rootPath.'vendor/mike42/escpos-php/Escpos.php');
 
         $imagePath = $rootPath.'resources/elephant-70x70.png';
         $img = new \EscposImage($imagePath);
