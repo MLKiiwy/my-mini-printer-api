@@ -34,16 +34,12 @@ class TestCommand extends ContainerAwareCommand
         $printer = new \Escpos($connector);
         $printer->initialize();
 
-        $printer->text('Elephant test !');
+        $printer->text('*************************');
+        $printer->text('Un petit elephant pour tester !');
         $printer->feed(2);
-
-        try {
-            $printer->bitImage($img);
-        } catch (\Exception $e) {
-            /* Images not supported on your PHP, or image file not found */
-            echo $e;
-        }
-        $printer->feed(10);
+        $printer->bitImage($img, \Escpos::IMG_DOUBLE_WIDTH | \Escpos::IMG_DOUBLE_HEIGHT);
+        $printer->feed(2);
+        $printer->text('*************************');
 
         /* Always close the printer! On some PrintConnectors, no actual
          * data is sent until the printer is closed. */
