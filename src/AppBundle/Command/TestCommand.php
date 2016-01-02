@@ -30,7 +30,7 @@ class TestCommand extends ContainerAwareCommand
         $imagePath = $rootPath.'resources/elephant-70x70.png';
         $img = new \EscposImage($imagePath);
 
-        $connector = new \FilePrintConnector('/home/pi/test.log');
+        $connector = new \FilePrintConnector('/dev/usb/lp0');
         $printer = new \Escpos($connector);
         $printer->initialize();
 
