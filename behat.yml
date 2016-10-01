@@ -4,6 +4,7 @@ default:
   suites:
     default:
       contexts:
+        - PrinterContext
         - FeatureContext: { doctrine: "@doctrine" }
         - Behat\MinkExtension\Context\MinkContext
         - Sanpi\Behatch\Context\RestContext

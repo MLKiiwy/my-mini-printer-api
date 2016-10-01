@@ -1,0 +1,7 @@
+{
+    "instructions": [
+        ["selectPrintMode", 8],
+        ["text", "http://example.com"],
+        ["selectPrintMode", 0]
+    ]
+}

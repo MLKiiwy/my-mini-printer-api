@@ -1,0 +1,16 @@
+{
+    "instructions": [
+        ["text", "<div>_content_</div>"],
+        ["text", "<p>paragraph</p>"],
+        ["text", "<div>"],
+        ["text", "  <div class=\"inner\">"],
+        ["text", "    _content_"],
+        ["text", "  </div>"],
+        ["text", "</div>"],
+        ["text", "<style type=\"text/css\">"],
+        ["text", "  p {color: #789;}"],
+        ["text", "</style>"],
+        ["text", "<div>"],
+        ["text", "  <a href=\"/\">home</a></div>"]
+    ]
+}
