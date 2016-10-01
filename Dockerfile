@@ -50,11 +50,7 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
 ADD . /app
 WORKDIR /app
 
-# Remove cache and logs if some and fixes permissions
-RUN ((rm -rf var/cache/* && rm -rf var/logs/* && rm -rf var/sessions/*) || true) \
-    # Install dependencies
-    && composer install --optimize-autoloader --no-scripts \
-    # Fixes permissions issues in non-dev mode
-    && chown -R www-data . var/cache var/logs var/sessions
+# Fixes permissions issues in non-dev mode
+RUN chown -R www-data . var/cache var/logs var/sessions
 
 CMD ["/app/docker/apache/run.sh"]
