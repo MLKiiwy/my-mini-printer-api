@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f68aeb52f22fa16358904d0479031699",
-    "content-hash": "d4b7c58cc1a8b6d56fff433d6538982e",
+    "hash": "312863ce024ee4c932dd1220eca802c1",
+    "content-hash": "a73688b6dc383b89904b6da98c643e07",
     "packages": [
         {
             "name": "api-platform/core",
@@ -2466,6 +2466,29 @@
     ],
     "packages-dev": [
         {
+            "name": "MLKiiwy/schemaorg",
+            "version": "dev-domain/message-printer",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MLKiiwy/schemaorg.git",
+                "reference": "ec6dc67cec8d7aff1bdf93715baae26d679e55ef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MLKiiwy/schemaorg/zipball/ec6dc67cec8d7aff1bdf93715baae26d679e55ef",
+                "reference": "ec6dc67cec8d7aff1bdf93715baae26d679e55ef",
+                "shasum": ""
+            },
+            "type": "project",
+            "license": [
+                "MIT"
+            ],
+            "support": {
+                "source": "https://github.com/MLKiiwy/schemaorg/tree/domain/message-printer"
+            },
+            "time": "2016-10-04 15:14:52"
+        },
+        {
             "name": "api-platform/schema-generator",
             "version": "v1.1.2",
             "source": {
@@ -3664,7 +3687,8 @@
     "stability-flags": {
         "api-platform/core": 5,
         "nelmio/api-doc-bundle": 20,
-        "mike42/escpos-php": 20
+        "mike42/escpos-php": 20,
+        "mlkiiwy/schemaorg": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

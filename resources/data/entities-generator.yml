@@ -1,0 +1,39 @@
+rdfa:
+    - vendor/MLKiiwy/schemaorg/data/schema.rdfa
+annotationGenerators:
+    - ApiPlatform\SchemaGenerator\AnnotationGenerator\PhpDocAnnotationGenerator
+    - ApiPlatform\SchemaGenerator\AnnotationGenerator\DoctrineOrmAnnotationGenerator
+    - ApiPlatform\SchemaGenerator\AnnotationGenerator\ConstraintAnnotationGenerator
+    - ApiPlatform\SchemaGenerator\AnnotationGenerator\DunglasApiAnnotationGenerator
+namespaces:
+    entity: AppBundle\Entity
+types:
+    Application:
+        parent: false
+        properties:
+            name: ~
+    Person:
+        parent: false
+        properties:
+            name: ~
+    SendToPrinterAction:
+        parent: false
+        properties:
+            agent: { range: "Person" }
+            object: { range: "Text" }
+            startTime: ~
+            instrument: { range: "Application" }
+            result: { range: "PrinterMessage" }
+    PrinterPrintAction:
+        parent: false
+        properties:
+            object: { range: "PrinterMessage" }
+            startTime: ~
+            endTime: ~
+    PrinterMessage:
+        parent: false
+        properties:
+            printerMessageBody: ~
+            dateReceived: { range: "DateTime" }
+            sender: { range: "Person" }
+            dateRead: { range: "DateTime" }
